@@ -1,0 +1,44 @@
+<header class="border-b p-3 w-full bg-white shadow-md">
+    <div class="flex justify-between items-center mx-auto">
+        <!-- Logo -->
+        <img src="/images/logo.png" alt="app logo" class="max-h-16">
+
+        <nav class="hidden md:flex gap-5 uppercase text-lg">
+            <a mat-button class="hover:text-blue-500 transition duration-200 cursor-pointer">Home</a>
+            <a mat-button class="hover:text-blue-500 transition duration-200 cursor-pointer">Shop</a>
+            <a mat-button class="hover:text-blue-500 transition duration-200 cursor-pointer">Contact</a>
+            <a mat-button class="hover:text-blue-500 transition duration-200 cursor-pointer">About Us</a>
+        </nav>
+
+        <!-- Cart and User Actions -->
+        <div class="flex gap-3 items-center">
+            <a mat-icon-button matBadge="5" matBadgeSize="large" class="hidden md:flex custom-badge">
+                <mat-icon class="text-gray-800 hover:text-blue-500 transition duration-200">shopping_cart</mat-icon>
+            </a>
+            <div class="hidden md:flex gap-3">
+                <button mat-stroked-button class="text-blue-500 hover:bg-blue-100 transition duration-200">Login</button>
+                <button mat-stroked-button class="text-blue-500 hover:bg-blue-100 transition duration-200">Register</button>
+            </div>
+            <!-- Hamburger Menu for mobile -->
+            <button mat-icon-button class="md:hidden" (click)="isMenuOpen = !isMenuOpen">
+                <mat-icon class="text-gray-800 hover:text-blue-500 transition duration-200">menu</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div 
+        [ngClass]="{'drawer-open': isMenuOpen, 'drawer-closed': !isMenuOpen}" 
+        class="mobile-menu fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity duration-300 ease-in-out"
+    >
+        <nav class="flex flex-col items-start gap-4 p-6 bg-white rounded-lg shadow-lg max-w-xs h-full overflow-y-auto">
+            <button class="self-end text-gray-500 hover:text-gray-900" (click)="isMenuOpen = false">
+                <mat-icon>close</mat-icon>
+            </button>
+            <a mat-button class="text-lg font-semibold hover:text-gray-700" (click)="isMenuOpen = false">Home</a>
+            <a mat-button class="text-lg font-semibold hover:text-gray-700" (click)="isMenuOpen = false">Shop</a>
+            <a mat-button class="text-lg font-semibold hover:text-gray-700" (click)="isMenuOpen = false">Contact</a>
+            <a mat-button class="text-lg font-semibold hover:text-gray-700" (click)="isMenuOpen = false">About Us</a>
+        </nav>
+    </div>
+</header>

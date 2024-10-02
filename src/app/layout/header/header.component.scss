@@ -1,0 +1,25 @@
+.custom-badge .mat-badge-content {
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.custom-badge .mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.mobile-menu {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%); /* Initially off-screen */
+
+  &.drawer-open {
+    transform: translateX(0); /* Slide in */
+  }
+
+  &.drawer-closed {
+    transform: translateX(100%); /* Slide out */
+  }
+}
